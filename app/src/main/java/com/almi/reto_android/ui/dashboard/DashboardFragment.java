@@ -1,69 +1,36 @@
 package com.almi.reto_android.ui.dashboard;
 
+import android.content.Context;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-
-import android.widget.EditText;
-
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import com.almi.reto_android.MainActivity;
 import com.almi.reto_android.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class DashboardFragment extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
+public class DashboardFragment extends Fragment {
 
-    EditText txtLatitud, txtLongitud;
-    GoogleMap mMap;
+    private Context context;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        txtLatitud = findViewById(R.id.txtLatitud);
-        txtLongitud = findViewById(R.id.txtLongitud);
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        assert mapFragment != null;
+        mapFragment.getMapAsync((OnMapReadyCallback) context);
+        return rootView;
     }
 
     @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
-        this.mMap.setOnMapClickListener(this);
-
-
-        this.mMap.setOnMapLongClickListener(this);
-
-        LatLng almi = new LatLng(43.2814487, -2.947576);
-        mMap.addMarker(new MarkerOptions().position(almi).title("Almi"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
-    }
-
-    @Override
-    public void onMapClick(@NonNull LatLng latLng) {
-        txtLatitud.setText(String.valueOf(latLng.latitude));
-        txtLongitud.setText(String.valueOf(latLng.longitude));
-
-        mMap.clear();
-        LatLng almi = new LatLng(latLng.latitude, latLng.longitude);
-        mMap.addMarker(new MarkerOptions().position(almi).title(""));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
-    }
-
-    @Override
-    public void onMapLongClick(@NonNull LatLng latLng) {
-        txtLatitud.setText(String.valueOf(latLng.latitude));
-        txtLongitud.setText(String.valueOf(latLng.longitude));
-
-        mMap.clear();
-        LatLng almi = new LatLng(latLng.latitude, latLng.longitude);
-        mMap.addMarker(new MarkerOptions().position(almi).title(""));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context=context;
     }
 }
