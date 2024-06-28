@@ -12,9 +12,6 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
         map:cameraZoom="10"
         map:uiRotateGestures="true"
         map:uiZoomControls="true" />
