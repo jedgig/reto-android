@@ -1,37 +1,69 @@
 package com.almi.reto_android.ui.dashboard;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.almi.reto_android.databinding.FragmentDashboardBinding;
 
-public class DashboardFragment extends Fragment {
+import android.widget.EditText;
 
-    private FragmentDashboardBinding binding;
+import com.almi.reto_android.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+public class DashboardFragment extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    EditText txtLatitud, txtLongitud;
+    GoogleMap mMap;
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        txtLatitud = findViewById(R.id.txtLatitud);
+        txtLongitud = findViewById(R.id.txtLongitud);
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+        mMap = googleMap;
+        this.mMap.setOnMapClickListener(this);
+
+
+        this.mMap.setOnMapLongClickListener(this);
+
+        LatLng almi = new LatLng(43.2814487, -2.947576);
+        mMap.addMarker(new MarkerOptions().position(almi).title("Almi"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
+    }
+
+    @Override
+    public void onMapClick(@NonNull LatLng latLng) {
+        txtLatitud.setText(String.valueOf(latLng.latitude));
+        txtLongitud.setText(String.valueOf(latLng.longitude));
+
+        mMap.clear();
+        LatLng almi = new LatLng(latLng.latitude, latLng.longitude);
+        mMap.addMarker(new MarkerOptions().position(almi).title(""));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
+    }
+
+    @Override
+    public void onMapLongClick(@NonNull LatLng latLng) {
+        txtLatitud.setText(String.valueOf(latLng.latitude));
+        txtLongitud.setText(String.valueOf(latLng.longitude));
+
+        mMap.clear();
+        LatLng almi = new LatLng(latLng.latitude, latLng.longitude);
+        mMap.addMarker(new MarkerOptions().position(almi).title(""));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(almi));
     }
 }
