@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.coursesNav, R.id.navigation_dashboard, R.id.galleryNav)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
         this.mMap.setOnMapClickListener(this);
-
-
         this.mMap.setOnMapLongClickListener(this);
 
         LatLng almi = new LatLng(43.2814487, -2.947576);
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapLongClick(@NonNull LatLng latLng) {
-
         mMap.clear();
         LatLng almi = new LatLng(latLng.latitude, latLng.longitude);
         mMap.addMarker(new MarkerOptions().position(almi).title(""));

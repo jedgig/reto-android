@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.courses.CoursesFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCourseTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/courses"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="@color/purple_500"
+        android:shadowColor="@color/teal_200"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:shadowRadius="5"/>
+
+        <ListView
+            android:id="@+id/lvAlmiCourse"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:background="@drawable/box"/>
+
+
+</LinearLayout>

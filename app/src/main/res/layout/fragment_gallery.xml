@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.GalleryFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvGalleryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/gallery"
+        android:gravity="center"
+        android:textSize="50sp"
+        android:textColor="@color/purple_500"
+        android:shadowColor="@color/teal_200"
+        android:shadowDy="5"
+        android:shadowDx="5"
+        android:shadowRadius="5"/>
+
+    <GridView
+        android:id="@+id/gvGallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:numColumns="auto_fit"
+        android:columnWidth="100dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"/>
+
+</LinearLayout>
