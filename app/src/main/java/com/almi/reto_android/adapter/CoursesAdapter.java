@@ -52,7 +52,7 @@ public class CoursesAdapter extends BaseAdapter {
         courseName.setText(coursesArrayList.get(position).getCourseName());
 
         TextView hours=line.findViewById(R.id.lvCourseHours);
-        hours.setText(String.valueOf(coursesArrayList.get(position).getHours()));
+        hours.setText(String.valueOf(coursesArrayList.get(position).getHours()) + "h");
 
         return line;
     }

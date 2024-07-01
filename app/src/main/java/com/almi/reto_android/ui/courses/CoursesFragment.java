@@ -32,18 +32,18 @@ public class CoursesFragment extends Fragment {
 
 
         ArrayList<Courses> coursesArrayList = new ArrayList<>();
-        coursesArrayList.add(new Courses("Day", "SMR1", 990));
-        coursesArrayList.add(new Courses("Day", "SMR2", 20));
-        coursesArrayList.add(new Courses("Day", "ASIR1", 30));
-        coursesArrayList.add(new Courses("Day", "ASIR2", 10));
-        coursesArrayList.add(new Courses("Day", "DAM1", 20));
-        coursesArrayList.add(new Courses("Day", "DAM2", 30));
-        coursesArrayList.add(new Courses("Day", "AF1", 10));
-        coursesArrayList.add(new Courses("Day", "AF2", 20));
-        coursesArrayList.add(new Courses("Day", "FPB1", 30));
-        coursesArrayList.add(new Courses("Day", "FPB2", 10));
-        coursesArrayList.add(new Courses("Evening", "Cae1", 20));
-        coursesArrayList.add(new Courses("Evening", "Cae2", 30));
+        coursesArrayList.add(new Courses("Matutino", "SMR1", 990));
+        coursesArrayList.add(new Courses("Matutino", "SMR2", 20));
+        coursesArrayList.add(new Courses("Matutino", "ASIR1", 30));
+        coursesArrayList.add(new Courses("Matutino", "ASIR2", 10));
+        coursesArrayList.add(new Courses("Matutino", "DAM1", 20));
+        coursesArrayList.add(new Courses("Matutino", "DAM2", 30));
+        coursesArrayList.add(new Courses("Matutino", "AF1", 10));
+        coursesArrayList.add(new Courses("Matutino", "AF2", 20));
+        coursesArrayList.add(new Courses("Matutino", "FPB1", 30));
+        coursesArrayList.add(new Courses("Matutino", "FPB2", 10));
+        coursesArrayList.add(new Courses("Vespertino", "Cae1", 20));
+        coursesArrayList.add(new Courses("Vespertino", "Cae2", 30));
 
 
         CoursesAdapter adapter = new CoursesAdapter(getContext(), coursesArrayList);
