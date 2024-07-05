@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.almi.reto"
+    namespace = "com.example.reto"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.almi.reto"
+        applicationId = "com.example.reto"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -35,7 +35,9 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.volley)
+    implementation(libs.picasso)
+    implementation (libs.play.services.maps)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
