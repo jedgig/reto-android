@@ -1,4 +1,4 @@
-package com.almi.reto_android.ui.notifications;
+package com.almi.reto.ui.notifications;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.almi.reto_android.databinding.FragmentNotificationsBinding;
+import com.almi.reto.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 

@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/coursesNav">
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/coursesNav"
-        android:name="com.almi.reto_android.ui.courses.CoursesFragment"
-        android:label="@string/courses"
-        tools:layout="@layout/fragment_courses" />
+        android:id="@+id/navigation_home"
+        android:name="com.almi.reto.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.almi.reto_android.ui.dashboard.DashboardFragment"
-        android:label="Mapa"
+        android:name="com.almi.reto.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/galleryNav"
-        android:name="com.almi.reto_android.ui.gallery.GalleryFragment"
-        android:label="@string/gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/navigation_notifications"
+        android:name="com.almi.reto.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>

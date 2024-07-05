@@ -1,4 +1,4 @@
-package com.almi.reto_android;
+package com.almi.reto;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.almi.reto_android", appContext.getPackageName());
+        assertEquals("com.almi.reto", appContext.getPackageName());
     }
 }

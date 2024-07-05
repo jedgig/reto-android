@@ -1,4 +1,4 @@
-package com.almi.reto_android;
+package com.almi.reto;
 
 import org.junit.Test;
 

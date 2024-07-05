@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Reto-android"
+rootProject.name = "reto"
 include(":app")
  

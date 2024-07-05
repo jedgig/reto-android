@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.almi.reto_android"
+    namespace = "com.almi.reto"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.almi.reto_android"
+        applicationId = "com.almi.reto"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.picasso)
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
@@ -43,7 +43,6 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

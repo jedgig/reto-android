@@ -1,22 +1,8 @@
 <resources>
-    <string name="app_name">Reto-android</string>
-    <string name="title_home">Home</string>
+    <string name="app_name">reto</string>
+    <string name="title_home">Inicio</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="inicio">Inicio</string>
-    <string name="mapa">Mapa</string>
-    <string name="galer_a">Galería</string>
-    <string name="gallery">Gallery</string>
-    <string name="map">Map</string>
-    <string name="courses">Courses</string>
-    <string name="logoalmi">LogoAlmi</string>
-    <string name="modality">Modality</string>
-    <string name="course">Course</string>
-    <string name="hours">Hours</string>
-    <string name="day">Day</string>
-    <string name="smr1">SMR1</string>
-    <string name="_990">990</string>
-    <string name="imagenmapa">ImagenMapa</string>
-    <string name="latitud">latitud</string>
-    <string name="longitud">longitud</string>
+    <string name="title_mapa">Mapa</string>
+    <string name="title_galeria">Galeria</string>
 </resources>
